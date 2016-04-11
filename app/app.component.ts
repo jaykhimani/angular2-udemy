@@ -5,7 +5,7 @@ import {AuthorsComponent} from './authors.component';
 @Component({
     selector: 'my-app',
     template: `
-        <h1>Hello Angular 2</h1>
+        <h1>Hi There</h1>
         <courses></courses>
         <authors></authors>
     `,
