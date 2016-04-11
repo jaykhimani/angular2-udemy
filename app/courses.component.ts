@@ -8,16 +8,21 @@ import {AutoGrowDirective} from './auto-grow.directive';
         <h2>Courses</h2>
         {{ title }}
         <img [src]="imageURL" />
-        <input type="text" autoGrow (click)="onSave()"/>
+        <!--<input type="text" (input)="title = $event.target.value" [value]="title"/>-->
+        Preview: {{ title }}
         <ul>
             <li *ngFor="#course of courses">{{course}}</li>
         </ul>
+        <input type="button" (click)="onClick()" value="Click Me" />
+
+        <input type="text" [(ngModel)]="someThing" />
     `,
     providers:[CourseService],
     directives: [AutoGrowDirective]
 })
 export class CoursesComponent {
     title = "The title of the courses page";
+    someThing = "SomeThins";
     imageURL = "http://lorempixel.com/400/200";
     courses;
 
@@ -25,7 +30,7 @@ export class CoursesComponent {
         this.courses = courseService.getCourses();
     }
 
-    onSave() {
-        console.log("clickkkkkkkkkkkkkkkkkkkkkk");
+    onClick() {
+        this.someThing = "";
     }
 }

@@ -27,16 +27,17 @@ System.register(['angular2/core', './course.service', './auto-grow.directive'], 
             CoursesComponent = (function () {
                 function CoursesComponent(courseService) {
                     this.title = "The title of the courses page";
+                    this.someThing = "SomeThins";
                     this.imageURL = "http://lorempixel.com/400/200";
                     this.courses = courseService.getCourses();
                 }
-                CoursesComponent.prototype.onSave = function () {
-                    console.log("clickkkkkkkkkkkkkkkkkkkkkk");
+                CoursesComponent.prototype.onClick = function () {
+                    this.someThing = "";
                 };
                 CoursesComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: "\n        <h2>Courses</h2>\n        {{ title }}\n        <img [src]=\"imageURL\" />\n        <input type=\"text\" autoGrow (click)=\"onSave()\"/>\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n    ",
+                        template: "\n        <h2>Courses</h2>\n        {{ title }}\n        <img [src]=\"imageURL\" />\n        <!--<input type=\"text\" (input)=\"title = $event.target.value\" [value]=\"title\"/>-->\n        Preview: {{ title }}\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n        <input type=\"button\" (click)=\"onClick()\" value=\"Click Me\" />\n\n        <input type=\"text\" [(ngModel)]=\"someThing\" />\n    ",
                         providers: [course_service_1.CourseService],
                         directives: [auto_grow_directive_1.AutoGrowDirective]
                     }), 
