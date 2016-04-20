@@ -17,7 +17,7 @@ import {AutoGrowDirective} from './auto-grow.directive';
 
         <input type="text" [(ngModel)]="someThing" />
     `,
-    providers:[CourseService],
+    providers: [CourseService],
     directives: [AutoGrowDirective]
 })
 export class CoursesComponent {
@@ -26,7 +26,7 @@ export class CoursesComponent {
     imageURL = "http://lorempixel.com/400/200";
     courses;
 
-    constructor(courseService: CourseService){
+    constructor(courseService: CourseService) {
         this.courses = courseService.getCourses();
     }
 

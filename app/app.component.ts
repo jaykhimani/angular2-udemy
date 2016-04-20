@@ -16,8 +16,8 @@ import {FavoritesComponent} from './favorites.component';
 })
 export class AppComponent {
     post = {
-        title : 'Title',
-        isFavorite : true
+        title: 'Title',
+        isFavorite: true
     }
 
     onFavoriteChange($event) {

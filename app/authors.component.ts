@@ -9,13 +9,13 @@ import {AuthorService} from './author.service';
             <li *ngFor="#author of authors">{{author}}</li>
         </ul>
     `,
-    providers:[AuthorService]
+    providers: [AuthorService]
 })
 export class AuthorsComponent {
     title = "The title of the authors page";
     authors;
 
-    constructor(authorService: AuthorService){
+    constructor(authorService: AuthorService) {
         this.authors = authorService.getAuthors();
     }
 }
