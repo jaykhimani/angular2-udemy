@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, Input, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: 'favorites',
@@ -11,9 +11,12 @@ import {Component} from 'angular2/core';
     `
 })
 export class FavoritesComponent {
-    isFavorite = true;
+    @Input() isFavorite = true;
+
+    @Output() change = new EventEmitter();
 
     onClick() {
         this.isFavorite = !this.isFavorite;
+        this.change.emit({ newValue: this.isFavorite });
     }
 }

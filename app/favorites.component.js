@@ -21,10 +21,20 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             FavoritesComponent = (function () {
                 function FavoritesComponent() {
                     this.isFavorite = true;
+                    this.change = new core_1.EventEmitter();
                 }
                 FavoritesComponent.prototype.onClick = function () {
                     this.isFavorite = !this.isFavorite;
+                    this.change.emit({ newValue: this.isFavorite });
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], FavoritesComponent.prototype, "isFavorite", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], FavoritesComponent.prototype, "change", void 0);
                 FavoritesComponent = __decorate([
                     core_1.Component({
                         selector: 'favorites',
