@@ -7,9 +7,10 @@ import {FavoritesComponent} from './favorites.component';
     selector: 'my-app',
     template: `
         <h1>Hi There</h1>
+        <favorites [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorites>
+        <i class="glyphicon glyphicon-star"></i>
         <courses></courses>
         <authors></authors>
-        <favorites [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorites>
     `,
     directives: [CoursesComponent, AuthorsComponent, FavoritesComponent]
 })

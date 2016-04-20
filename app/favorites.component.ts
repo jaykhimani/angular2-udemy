@@ -2,13 +2,12 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: 'favorites',
-    template: `
-        <i class="glyphicon"
-           [class.glyphicon-star]="isFavorite"
-           [class.glyphicon-star-empty]="!isFavorite"
-           (click)="onClick()">
-       </i>
-    `
+    templateUrl: 'app/favorites.template.html',
+    styles: [`
+            .glyphicon-star {
+                color: orange;
+            }
+    `]
 })
 export class FavoritesComponent {
     @Input() isFavorite = true;

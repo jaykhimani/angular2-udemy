@@ -40,7 +40,7 @@ System.register(['angular2/core', './courses.component', './authors.component', 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hi There</h1>\n        <courses></courses>\n        <authors></authors>\n        <favorites [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorites>\n    ",
+                        template: "\n        <h1>Hi There</h1>\n        <favorites [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorites>\n        <i class=\"glyphicon glyphicon-star\"></i>\n        <courses></courses>\n        <authors></authors>\n    ",
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorites_component_1.FavoritesComponent]
                     }), 
                     __metadata('design:paramtypes', [])
