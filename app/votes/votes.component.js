@@ -20,7 +20,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             VotesComponent = (function () {
                 function VotesComponent() {
-                    this.voteCount = 11;
+                    this.voteCount = 0;
                     this.myVote = 0;
                     this.vote = new core_1.EventEmitter();
                 }
@@ -52,7 +52,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'votes',
                         template: "\n        <div class='votes-container'>\n            <i class='glyphicon glyphicon-menu-up glyphicon-menu-icon' (click)='onClick(1)' [class.highlighted]='myVote === 1'></i>\n            <span>{{voteCount}}</span>\n            <i class='glyphicon glyphicon-menu-down glyphicon-menu-icon' (click)='onClick(0)' [class.highlighted]='myVote === -1'></i>\n        </div>\n    ",
-                        styles: ["\n        .votes-container {\n            width: 20px;\n        }\n\n        .glyphicon-menu-icon {\n            cursor: pointer;\n            color: #ccc;\n        }\n\n        .highlighted {\n            color: orange;\n            cursor: default;\n        }\n    "]
+                        styles: ["\n        .votes-container {\n            width: 20px;\n            color: #999\n        }\n\n        .glyphicon-menu-icon {\n            cursor: pointer;\n            color: #ccc;\n        }\n\n        .highlighted {\n            color: orange;\n            cursor: default;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], VotesComponent);

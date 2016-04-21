@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
-import {CoursesComponent} from './courses.component';
-import {AuthorsComponent} from './authors.component';
-import {FavoritesComponent} from './favorites.component';
-import {LikesComponent} from './likes.component';
+import {CoursesComponent} from './courses/courses.component';
+import {AuthorsComponent} from './authors/authors.component';
+import {FavoritesComponent} from './favorites/favorites.component';
+import {LikesComponent} from './likes/likes.component';
 import {VotesComponent} from './votes/votes.component';
 
 @Component({

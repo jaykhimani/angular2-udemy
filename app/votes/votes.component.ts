@@ -12,6 +12,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
     styles: [`
         .votes-container {
             width: 20px;
+            color: #999
         }
 
         .glyphicon-menu-icon {
@@ -26,7 +27,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
     `]
 })
 export class VotesComponent {
-    @Input() voteCount = 11;
+    @Input() voteCount = 0;
     @Input() myVote = 0;
 
     @Output() vote = new EventEmitter();
