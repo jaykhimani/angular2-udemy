@@ -10,7 +10,7 @@ import {LikesComponent} from './likes.component';
         <h1>Hi There</h1>
         <favorites [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorites>
         <i class="glyphicon glyphicon-star"></i>
-        <likes></likes>
+        <likes [liked]="tweets.tweetLiked" [noOfLikes]="tweets.totalLikes"></likes>
         <courses></courses>
         <authors></authors>
     `,
@@ -20,6 +20,11 @@ export class AppComponent {
     post = {
         title: 'Title',
         isFavorite: true
+    }
+
+    tweets = {
+        totalLikes: 12,
+        tweetLiked: false
     }
 
     onFavoriteChange($event) {

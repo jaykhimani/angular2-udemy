@@ -22,7 +22,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function LikesComponent() {
                     this.noOfLikes = 10;
                     this.liked = false;
-                    this.over = false;
                 }
                 LikesComponent.prototype.onClick = function () {
                     this.liked = !this.liked;
@@ -33,10 +32,19 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         this.noOfLikes--;
                     }
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], LikesComponent.prototype, "noOfLikes", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], LikesComponent.prototype, "liked", void 0);
                 LikesComponent = __decorate([
                     core_1.Component({
                         selector: 'likes',
-                        template: "\n        <i class='glyphicon glyphicon-heart heartcolor' (mouseover)=\"over=true\" (mouseout)=\"over=false\" (click)=\"onClick()\" [style.cursor]=\"over ? 'pointer' : 'normal'\" [style.color]=\"liked ? 'deeppink' : '#ccc'\"></i>\n        {{noOfLikes}}\n    "
+                        template: "\n        <i class='glyphicon glyphicon-heart' (click)=\"onClick()\" [class.highlighted]=\"liked\"></i>\n        <span>{{noOfLikes}}</span>\n    ",
+                        styles: ["\n        .glyphicon-heart {\n            cursor: pointer;\n            color: #ccc;\n        }\n\n        .highlighted {\n            color: deeppink;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LikesComponent);

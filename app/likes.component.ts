@@ -1,16 +1,25 @@
-import {Component} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 
 @Component({
     selector: 'likes',
     template: `
-        <i class='glyphicon glyphicon-heart heartcolor' (mouseover)="over=true" (mouseout)="over=false" (click)="onClick()" [style.cursor]="over ? 'pointer' : 'normal'" [style.color]="liked ? 'deeppink' : '#ccc'"></i>
-        {{noOfLikes}}
-    `
+        <i class='glyphicon glyphicon-heart' (click)="onClick()" [class.highlighted]="liked"></i>
+        <span>{{noOfLikes}}</span>
+    `,
+    styles: [`
+        .glyphicon-heart {
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .highlighted {
+            color: deeppink;
+        }
+    `]
 })
 export class LikesComponent {
-    noOfLikes = 10;
-    liked = false;
-    over = false;
+    @Input() noOfLikes = 10;
+    @Input() liked = false;
 
     onClick() {
         this.liked = !this.liked;
