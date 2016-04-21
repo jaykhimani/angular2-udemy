@@ -4,19 +4,12 @@ import {AuthorsComponent} from './authors/authors.component';
 import {FavoritesComponent} from './favorites/favorites.component';
 import {LikesComponent} from './likes/likes.component';
 import {VotesComponent} from './votes/votes.component';
+import {TweetsComponent} from './tweet/tweets.component';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>Hi There</h1>
-        <favorites [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorites>
-        <i class="glyphicon glyphicon-star"></i>
-        <likes [liked]="tweets.tweetLiked" [noOfLikes]="tweets.totalLikes"></likes>
-        <votes (vote)='onVote($event)'></votes>
-        <courses></courses>
-        <authors></authors>
-    `,
-    directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikesComponent, VotesComponent]
+    templateUrl: 'app/app.template.html',
+    directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikesComponent, VotesComponent, TweetsComponent]
 })
 export class AppComponent {
     post = {

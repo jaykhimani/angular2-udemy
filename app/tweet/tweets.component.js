@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './tweet.service', '../likes/likes.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,23 +10,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, tweet_service_1, likes_component_1;
     var TweetsComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (tweet_service_1_1) {
+                tweet_service_1 = tweet_service_1_1;
+            },
+            function (likes_component_1_1) {
+                likes_component_1 = likes_component_1_1;
             }],
         execute: function() {
             TweetsComponent = (function () {
-                function TweetsComponent() {
+                function TweetsComponent(tweetService) {
+                    this.tweets = tweetService.getTweets();
                 }
                 TweetsComponent = __decorate([
                     core_1.Component({
                         selector: 'tweets',
-                        template: "\n        \n    "
+                        template: "\n        <div class=\"media\" *ngFor=\"#tweet of tweets\">\n            <div class=\"media-left\">\n                <a href=\"#\">\n                    <img class=\"media-object\" [src]=\"tweet.imageUrl\">\n                </a>\n            </div>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">{{tweet.userFirstName}}  {{tweet.userName}}</h4>\n                <span>{{tweet.tweet}}</span><br/>\n                <likes [noOfLikes]=\"tweet.likes\"></likes>\n            </div>\n        </div>\n    ",
+                        providers: [tweet_service_1.TweetService],
+                        directives: [likes_component_1.LikesComponent]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [tweet_service_1.TweetService])
                 ], TweetsComponent);
                 return TweetsComponent;
             }());
