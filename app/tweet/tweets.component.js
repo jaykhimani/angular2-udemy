@@ -31,7 +31,8 @@ System.register(['angular2/core', './tweet.service', '../likes/likes.component']
                 TweetsComponent = __decorate([
                     core_1.Component({
                         selector: 'tweets',
-                        template: "\n        <div class=\"media\" *ngFor=\"#tweet of tweets\">\n            <div class=\"media-left\">\n                <a href=\"#\">\n                    <img class=\"media-object\" [src]=\"tweet.imageUrl\">\n                </a>\n            </div>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">{{tweet.userFirstName}}  {{tweet.userName}}</h4>\n                <span>{{tweet.tweet}}</span><br/>\n                <likes [noOfLikes]=\"tweet.likes\"></likes>\n            </div>\n        </div>\n    ",
+                        template: "\n        <div class=\"media\" *ngFor=\"#tweet of tweets\">\n            <div class=\"media-left\">\n                <a href=\"#\">\n                    <img class=\"media-object\" [src]=\"tweet.imageUrl\">\n                </a>\n            </div>\n            <div class=\"media-body\">\n                <h4 class=\"media-heading\">{{tweet.userFirstName}}  <span class=\"handle\">{{tweet.userName}}</span></h4>\n                <span>{{tweet.tweet}}</span><br/>\n                <likes [noOfLikes]=\"tweet.likes\"></likes>\n            </div>\n        </div>\n    ",
+                        styles: ["\n        .handle {\n            color: #ccc;\n        }\n\n        .media {\n            margin-bottom: 20px;\n        }\n\n        .media-object {\n            border-radius: 8px;\n        }\n    "],
                         providers: [tweet_service_1.TweetService],
                         directives: [likes_component_1.LikesComponent]
                     }), 

@@ -1,5 +1,5 @@
 export class TweetService {
-    getTweets() {
+    getTweets() : any[] {
         return [
             {
                 imageUrl: 'http://lorempixel.com/100/100?1',

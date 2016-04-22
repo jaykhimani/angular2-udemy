@@ -12,17 +12,30 @@ import {LikesComponent} from '../likes/likes.component';
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">{{tweet.userFirstName}}  {{tweet.userName}}</h4>
+                <h4 class="media-heading">{{tweet.userFirstName}}  <span class="handle">{{tweet.userName}}</span></h4>
                 <span>{{tweet.tweet}}</span><br/>
                 <likes [noOfLikes]="tweet.likes"></likes>
             </div>
         </div>
     `,
+    styles: [`
+        .handle {
+            color: #ccc;
+        }
+
+        .media {
+            margin-bottom: 20px;
+        }
+
+        .media-object {
+            border-radius: 8px;
+        }
+    `],
     providers: [TweetService],
     directives: [LikesComponent]
 })
 export class TweetsComponent {
-    tweets;
+    tweets: any[];
 
     constructor(tweetService: TweetService) {
         this.tweets = tweetService.getTweets();
