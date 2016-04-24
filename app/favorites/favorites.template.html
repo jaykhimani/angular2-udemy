@@ -1,5 +1,12 @@
-<i class="glyphicon"
+<!-- <i class="glyphicon"
    [class.glyphicon-star]="isFavorite"
    [class.glyphicon-star-empty]="!isFavorite"
+   (click)="onClick()">
+</i> -->
+<i class="glyphicon"
+   [ngClass]="{
+       'glyphicon-star': isFavorite,
+       'glyphicon-star-empty': !isFavorite
+   }"
    (click)="onClick()">
 </i>
