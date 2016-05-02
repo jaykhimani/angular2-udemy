@@ -10,11 +10,12 @@ import {SummaryPipe} from './pipes/summary.pipe';
 import {ZippyComponent} from './zippy/zippy.component';
 import {ContactFormComponent} from './contact/contact-form.component';
 import {SubscribeFormComponent} from './subscribe/subscribe-form.component';
+import {SignupFormComponent} from './signup/signup-form.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.template.html',
-    directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikesComponent, VotesComponent, TweetsComponent, NgSwitchComponent, ZippyComponent, ContactFormComponent, SubscribeFormComponent],
+    directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikesComponent, VotesComponent, TweetsComponent, NgSwitchComponent, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignupFormComponent],
     pipes: [SummaryPipe]
 })
 export class AppComponent {
