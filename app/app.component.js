@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses/courses.component', './authors/authors.component', './favorites/favorites.component', './likes/likes.component', './votes/votes.component', './tweet/tweets.component', './ngswitch/ngswitch.component', './pipes/summary.pipe', './zippy/zippy.component', './contact/contact-form.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses/courses.component', './authors/authors.component', './favorites/favorites.component', './likes/likes.component', './votes/votes.component', './tweet/tweets.component', './ngswitch/ngswitch.component', './pipes/summary.pipe', './zippy/zippy.component', './contact/contact-form.component', './subscribe/subscribe-form.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses/courses.component', './authors/auth
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, favorites_component_1, likes_component_1, votes_component_1, tweets_component_1, ngswitch_component_1, summary_pipe_1, zippy_component_1, contact_form_component_1;
+    var core_1, courses_component_1, authors_component_1, favorites_component_1, likes_component_1, votes_component_1, tweets_component_1, ngswitch_component_1, summary_pipe_1, zippy_component_1, contact_form_component_1, subscribe_form_component_1;
     var AppComponent;
     return {
         setters:[
@@ -46,6 +46,9 @@ System.register(['angular2/core', './courses/courses.component', './authors/auth
             },
             function (contact_form_component_1_1) {
                 contact_form_component_1 = contact_form_component_1_1;
+            },
+            function (subscribe_form_component_1_1) {
+                subscribe_form_component_1 = subscribe_form_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -70,7 +73,7 @@ System.register(['angular2/core', './courses/courses.component', './authors/auth
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/app.template.html',
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorites_component_1.FavoritesComponent, likes_component_1.LikesComponent, votes_component_1.VotesComponent, tweets_component_1.TweetsComponent, ngswitch_component_1.NgSwitchComponent, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent],
+                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorites_component_1.FavoritesComponent, likes_component_1.LikesComponent, votes_component_1.VotesComponent, tweets_component_1.TweetsComponent, ngswitch_component_1.NgSwitchComponent, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent, subscribe_form_component_1.SubscribeFormComponent],
                         pipes: [summary_pipe_1.SummaryPipe]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -21,8 +21,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             ContactFormComponent = (function () {
                 function ContactFormComponent() {
                 }
-                ContactFormComponent.prototype.log = function (name) {
-                    console.log(name);
+                ContactFormComponent.prototype.onSuibmit = function (form) {
+                    console.log(form);
                 };
                 ContactFormComponent = __decorate([
                     core_1.Component({

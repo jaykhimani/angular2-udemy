@@ -23,7 +23,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 SummaryPipe.prototype.transform = function (value, args) {
                     var limit = (args && args[0]) ? parseInt(args[0]) : 50;
-                    console.log(limit);
                     if (value) {
                         return value.trim().substring(0, limit) + '...';
                     }
