@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {CoursesComponent} from './courses/courses.component';
 import {AuthorsComponent} from './authors/authors.component';
 import {FavoritesComponent} from './favorites/favorites.component';

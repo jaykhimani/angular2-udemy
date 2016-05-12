@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {Control, ControlGroup, Validators, FormBuilder} from 'angular2/common';
+import {Component} from '@angular/core';
+import {Control, ControlGroup, Validators, FormBuilder} from '@angular/common';
 import {UsernameValidator} from './username.validator';
 
 @Component({
