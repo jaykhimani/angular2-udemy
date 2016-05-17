@@ -4,11 +4,21 @@ var UsernameValidator = (function () {
     }
     UsernameValidator.cannotContainSpace = function (control) {
         if (control.value.indexOf(' ') >= 0) {
-            return { cannotContainSpace: true };
+            return { annotContainSpace: true };
         }
         return null;
     };
-    UsernameValidator.prototype.shouldBeUnique = function (control) {
+    UsernameValidator.shouldBeUnique = function (control) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                if (control.value === 'jay') {
+                    resolve({ shouldBeUnique: true });
+                }
+                else {
+                    resolve(null);
+                }
+            }, 1000);
+        });
     };
     return UsernameValidator;
 }());

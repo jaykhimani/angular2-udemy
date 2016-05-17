@@ -14,7 +14,7 @@ var username_validator_1 = require('./username.validator');
 var SignupFormComponent = (function () {
     function SignupFormComponent(fb) {
         this.form = fb.group({
-            username: ['', common_1.Validators.compose([common_1.Validators.required, username_validator_1.UsernameValidator.cannotContainSpace])],
+            username: ['', common_1.Validators.compose([common_1.Validators.required, username_validator_1.UsernameValidator.cannotContainSpace]), username_validator_1.UsernameValidator.shouldBeUnique],
             password: ['', common_1.Validators.required]
         });
     }
