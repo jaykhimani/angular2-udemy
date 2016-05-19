@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Control, ControlGroup, Validators, FormBuilder} from '@angular/common';
-import {UsernameValidator} from './username.validator';
+import {Component} from "@angular/core";
+import {ControlGroup, Validators, FormBuilder} from "@angular/common";
+import {UsernameValidator} from "./username.validator";
 
 @Component({
     selector: 'signup-form',
@@ -23,6 +23,9 @@ export class SignupFormComponent {
     }
 
     signup() {
+        this.form.find('username').setErrors({
+            invalidLogin: true
+        })
         console.log(this.form.value);
     }
 }

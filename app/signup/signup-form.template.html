@@ -1,11 +1,14 @@
 <form [ngFormModel]="form" (ngSubmit)="signup()">
     <div class="form-group">
         <label for="username">Username</label>
-        <input id="username"  type="text" class="form-control" ngControl="username" #username="ngForm" />
+        <input id="username" type="text" class="form-control" ngControl="username" #username="ngForm"/>
         <div *ngIf="username.control.pending">
             Checking for uniqueness...
         </div>
         <div *ngIf="username.touched && username.errors">
+            <div *ngIf="username.errors.invalidLogin" class="alert alert-danger">
+                Username or password invalid
+            </div>
             <div class="alert alert-danger" *ngIf="username.errors.required">
                 Username is required.
             </div>
