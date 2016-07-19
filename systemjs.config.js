@@ -21,6 +21,10 @@
             main : 'index.js',
             defaultExtension : 'js'
         },
+        '@angular/forms' : {
+            main : 'index.js',
+            defaultExtension : 'js'
+        }
     };
 
     var ngPackageNames = [ 'common', 'compiler', 'core', 'form', 'http', 'platform-browser', 'platform-browser-dynamic', 'router',
