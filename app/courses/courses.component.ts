@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {CourseService} from './course.service';
-import {AutoGrowDirective} from './../auto-grow.directive';
+import {Component} from "@angular/core";
+import {CourseService} from "./course.service";
+import {AutoGrowDirective} from "./../auto-grow.directive";
 
 @Component({
     selector: 'courses',
@@ -11,7 +11,7 @@ import {AutoGrowDirective} from './../auto-grow.directive';
         <!--<input type="text" (input)="title = $event.target.value" [value]="title"/>-->
         Preview: {{ title }}
         <ul>
-            <li *ngFor="#course of courses">{{course}}</li>
+            <li *ngFor="let course of courses">{{course}}</li>
         </ul>
         <input type="button" (click)="onClick()" value="Click Me" />
 

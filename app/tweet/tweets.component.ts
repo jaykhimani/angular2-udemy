@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {TweetService} from './tweet.service';
-import {LikesComponent} from '../likes/likes.component';
+import {Component} from "@angular/core";
+import {TweetService} from "./tweet.service";
+import {LikesComponent} from "../likes/likes.component";
 
 @Component({
     selector: 'tweets',
     template: `
-        <div class="media" *ngFor="#tweet of tweets">
+        <div class="media" *ngFor="let tweet of tweets">
             <div class="media-left">
                 <a href="#">
                     <img class="media-object" [src]="tweet.imageUrl">
