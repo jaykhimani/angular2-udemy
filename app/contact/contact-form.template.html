@@ -1,11 +1,11 @@
 <form #f="ngForm" (ngSubmit)="onSuibmit(f.form)">
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input ngControl="firstName" #firstName="ngForm" id="firstName"
+        <input [(ngModel)]="model.firstName" #firstName="ngModel" id="firstName" name="firstName"
                type="text" class="form-control" required minlength="3" />
        <div *ngIf="firstName.touched && firstName.errors">
            <div *ngIf="firstName.errors.required" class="alert alert-danger">
-               Firt Name is required
+               First Name is required
            </div>
            <div class="alert alert-danger" *ngIf="firstName.errors.minlength">
                First name should be minimum {{ firstName.errors.minlength.requiredLength }} characters.
@@ -14,13 +14,13 @@
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-        <textarea #comment="ngForm" ngControl="comment" id="comment"
+        <textarea #comment="ngModel" [(ngModel)]="model.comment" id="comment" name="comment"
                     cols="30" rows="10" class="form-control" required></textarea>
-        <div *ngIf="comment.touched && comment.errors">
-            <div *ngIf="comment.errors.required" class="alert alert-danger">
+        <div *ngIf="model.comment.touched && model.comment.errors">
+            <div *ngIf="model.comment.errors.required" class="alert alert-danger">
                 Comment is required
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!f.form.valid">Submit</button>
 </form>
