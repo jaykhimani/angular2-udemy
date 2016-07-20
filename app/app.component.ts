@@ -1,7 +1,8 @@
 import {Component} from "@angular/core";
 import {FavoritesComponent} from "./favorites/favorites.component";
 import {SummaryPipe} from "./pipes/summary.pipe";
-import {ContactFormComponent} from "./contact/contact-form.component";
+import {SubscribeFormComponent} from "./subscribe/subscribe-form.component";
+// import {ContactFormComponent} from "./contact/contact-form.component";
 // import {CoursesComponent} from './courses/courses.component';
 // import {AuthorsComponent} from './authors/authors.component';
 // import {LikesComponent} from './likes/likes.component';
@@ -9,7 +10,6 @@ import {ContactFormComponent} from "./contact/contact-form.component";
 // import {TweetsComponent} from './tweet/tweets.component';
 // import {NgSwitchComponent} from './ngswitch/ngswitch.component';
 // import {ZippyComponent} from './zippy/zippy.component';
-// import {SubscribeFormComponent} from './subscribe/subscribe-form.component';
 // import {SignupFormComponent} from './signup/signup-form.component';
 
 @Component({
@@ -24,8 +24,8 @@ import {ContactFormComponent} from "./contact/contact-form.component";
         // TweetsComponent,
         // NgSwitchComponent,
         // ZippyComponent,
-        ContactFormComponent
-        // SubscribeFormComponent,
+        // ContactFormComponent
+        SubscribeFormComponent
         // SignupFormComponent
     ],
     pipes: [SummaryPipe]

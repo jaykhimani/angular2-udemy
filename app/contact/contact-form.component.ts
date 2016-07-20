@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {Contact} from "./Contact";
+import {Contact} from "./contact.model";
 
 @Component({
     selector: 'contact-form',
@@ -7,7 +7,8 @@ import {Contact} from "./Contact";
 })
 export class ContactFormComponent {
     model = new Contact("", "");
-    onSuibmit(form) {
+
+    onSubmit(form) {
         console.log(form);
     }
 }
