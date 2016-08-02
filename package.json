@@ -1,10 +1,11 @@
 {
-  "name": "angular2-quickstart",
+  "name": "angular2-udemy",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
+    "preinstall": "npm install typings && npm install angular-cli",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
@@ -41,5 +42,8 @@
     "tslint": "3.11.0",
     "typescript": "1.8.10",
     "typings": "1.3.1"
+  },
+  "engines": {
+    "node": "~6"
   }
 }
