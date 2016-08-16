@@ -7,32 +7,31 @@
     <div *ngIf="username.control.pending">
       Checking for uniqueness...
     </div>
-    <div *ngIf="username.touched && username.errors">
-      <div *ngIf="username.errors.invalidLogin" class="alert alert-danger">
+-->
+    <div *ngIf="form.controls.username.touched && form.controls.username.errors">
+      <div *ngIf="form.controls.username.errors.invalidLogin" class="alert alert-danger">
         Username or password invalid
       </div>
-      <div class="alert alert-danger" *ngIf="username.errors.required">
+      <div class="alert alert-danger" *ngIf="form.controls.username.errors.required">
         Username is required.
       </div>
-      <div class="alert alert-danger" *ngIf="username.errors.cannotContainSpace">
+      <div class="alert alert-danger" *ngIf="form.controls.username.errors.cannotContainSpace">
         Username cannot contain space.
       </div>
-      <div class="alert alert-danger" *ngIf="username.errors.shouldBeUnique">
+      <div class="alert alert-danger" *ngIf="form.controls.username.errors.shouldBeUnique">
         This username is already taken.
       </div>
     </div>
--->
+
   </div>
   <div>
     <label for="password">Password</label>
     <input id="password" type="password" class="form-control" formControlName="password"/>
-<!--
-    <div *ngIf="password.touched && password.errors">
-      <div class="alert alert-danger" *ngIf="password.errors.required">
+    <div *ngIf="form.controls.password.touched && form.controls.password.errors">
+      <div class="alert alert-danger" *ngIf="form.controls.password.errors.required">
         Password is required.
       </div>
     </div>
--->
   </div>
   <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>

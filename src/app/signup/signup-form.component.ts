@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from "@angular/core";
-import {FormGroup, FormBuilder, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
+import {FormGroup, FormBuilder, Validators, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
+import {UsernameValidator} from "./username.validator";
 
 @Component({
   selector: 'signup-form',
@@ -20,8 +21,8 @@ export class SignupFormComponent {
 
   constructor(private _fb: FormBuilder) {
     this.form = this._fb.group({
-      username: '',
-      password: ''
+      username: ['', Validators.compose([Validators.required]), UsernameValidator.shouldBeUnique],
+      password: ['', Validators.required]
     });
   }
 
