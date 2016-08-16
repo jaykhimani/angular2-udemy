@@ -1,31 +1,35 @@
-import {Component} from "@angular/core";
-import {ControlGroup, Validators, FormBuilder} from "@angular/common";
-import {UsernameValidator} from "./username.validator";
+import {Component, ViewEncapsulation} from "@angular/core";
+import {FormGroup, FormBuilder, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
 
 @Component({
-    selector: 'signup-form',
-    templateUrl: 'app/signup/signup-form.template.html'
+  selector: 'signup-form',
+  templateUrl: 'app/signup/signup-form.template.html',
+  directives: [
+    REACTIVE_FORM_DIRECTIVES
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class SignupFormComponent {
-    // form = new ControlGroup({
-    //     username: new Control('', Validators.required),
-    //     password: new Control('', Validators.required)
-    // });
 
-    form: ControlGroup;
+  // form = new FormGroup({
+  //   username: new FormControl(),
+  //   password: new FormControl()
+  // });
 
-    constructor(fb: FormBuilder) {
-        this.form = fb.group({
-            username: ['', Validators.compose([Validators.required, UsernameValidator.cannotContainSpace]), UsernameValidator.shouldBeUnique],
-            password: ['', Validators.required]
-        })
+  form: FormGroup;
 
-    }
+  constructor(private _fb: FormBuilder) {
+    this.form = this._fb.group({
+      username: '',
+      password: ''
+    });
+  }
 
-    signup() {
-        this.form.find('username').setErrors({
-            invalidLogin: true
-        })
-        console.log(this.form.value);
-    }
+  //
+  // signup() {
+  //     this.form.find('username').setErrors({
+  //         invalidLogin: true
+  //     });
+  //     console.log(this.form.value);
+  // }
 }
