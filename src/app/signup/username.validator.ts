@@ -1,15 +1,15 @@
-import {Control} from '@angular/common';
+import {FormControl} from '@angular/forms';
 
 export class UsernameValidator {
-    static cannotContainSpace(control: Control) {
+    static cannotContainSpace(control: FormControl) {
         if (control.value.indexOf(' ') >= 0) {
-            return { annotContainSpace: true };
+            return { cannotContainSpace: true };
         }
 
         return null;
     }
 
-    static shouldBeUnique(control: Control) {
+    static shouldBeUnique(control: FormControl) {
         return new Promise((resolve, reject) => {
             setTimeout(function()  {
                 if (control.value === 'jay') {

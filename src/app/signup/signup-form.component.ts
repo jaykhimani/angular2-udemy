@@ -21,7 +21,7 @@ export class SignupFormComponent {
 
   constructor(private _fb: FormBuilder) {
     this.form = this._fb.group({
-      username: ['', Validators.compose([Validators.required]), UsernameValidator.shouldBeUnique],
+      username: ['', Validators.compose([Validators.required, UsernameValidator.cannotContainSpace]), UsernameValidator.shouldBeUnique],
       password: ['', Validators.required]
     });
   }
