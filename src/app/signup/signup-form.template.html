@@ -1,13 +1,10 @@
-<!--<form novalidate [formGroup]="form" (ngSubmit)="signup()">-->
-<form novalidate [formGroup]="form">
+<form novalidate [formGroup]="form" (ngSubmit)="signup()">
   <div class="form-group">
     <label for="username">Username</label>
     <input id="username" type="text" class="form-control" formControlName="username"/>
-<!--
-    <div *ngIf="username.control.pending">
+    <div *ngIf="form.controls.username.pending">
       Checking for uniqueness...
     </div>
--->
     <div *ngIf="form.controls.username.touched && form.controls.username.errors">
       <div *ngIf="form.controls.username.errors.invalidLogin" class="alert alert-danger">
         Username or password invalid
@@ -33,6 +30,7 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Sign Up</button>
+  <br/>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Sign Up</button>
 </form>
 {{ form.value | json }}
